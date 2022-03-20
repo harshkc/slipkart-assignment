@@ -1,8 +1,10 @@
 import React from "react";
-import {products} from "../mockData";
 import ProductCard from "./ProductCard";
+import {useProductContext} from "../Context/ProductContext";
 
 const ProductList = () => {
+  const {products} = useProductContext();
+  console.log(products);
   return (
     <div className='flex flex-row flex-wrap py-4 ml-6'>
       {products.map((product) => {
