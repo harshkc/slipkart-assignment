@@ -5,7 +5,6 @@ function Header() {
   return (
     <div>
       <div className='sticky top-0 z-50 flex items-center px-10 bg-blue-600 h-14 justify-evenly py-7'>
-        {/* headerLeft */}
         <div className='flex '>
           <div className='flex flex-col items-center'>
             <img
@@ -18,12 +17,11 @@ function Header() {
             </p>
           </div>
           <input
-            className='px-3 ml-2 text-sm rounded-sm outline-none w-36 md:w-96'
+            className='px-3 ml-4 text-sm rounded-sm outline-none w-36 md:w-96'
             type='search'
             placeholder='Search for products, brands and more'
           />
         </div>
-        {/* headerRight */}
         <div className='flex items-center space-x-3 md:space-x-8 '>
           <button className='px-3 py-1 text-blue-500 bg-white rounded-sm md:px-7 text-md'>Login</button>
           <h4 className='hidden text-white cursor-pointer md:inline'>More</h4>
