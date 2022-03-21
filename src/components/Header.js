@@ -1,7 +1,19 @@
 import React from "react";
 import {FaShoppingCart} from "react-icons/fa";
+import {useProductContext} from "../context/ProductContext";
 
 function Header() {
+  const {dispatch} = useProductContext();
+  const timeout = React.useRef();
+
+  const handleSearch = (e) => {
+    clearTimeout(timeout.current);
+    const value = e.target.value;
+    timeout.current = setTimeout(() => {
+      dispatch({type: "SEARCH_PRODUCTS", payload: value});
+    }, 500);
+  };
+
   return (
     <div>
       <div className='sticky top-0 z-50 flex items-center px-10 bg-blue-600 h-14 justify-evenly py-7'>
@@ -20,6 +32,7 @@ function Header() {
             className='px-3 ml-4 text-sm rounded-sm outline-none w-36 md:w-96'
             type='search'
             placeholder='Search for products, brands and more'
+            onChange={handleSearch}
           />
         </div>
         <div className='flex items-center space-x-3 md:space-x-8 '>

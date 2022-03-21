@@ -2,7 +2,7 @@ import React from "react";
 
 const ProductCard = ({product}) => {
   return (
-    <div key={product.id} className='p-5 ml-6 w-72'>
+    <div key={product.id} className='w-64 p-5 ml-6'>
       <div className='relative pt-64 overflow-hidden'>
         <img src={product.image} alt='' className='absolute inset-0 w-full h-auto' />
       </div>
